@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body {
+    margin: 0 6rem;
+    /* background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%); */
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.sub-container {
+    padding: 1rem;
+}
+
+.inner-container {
+    width: 20%;
+    border-radius: 10px;
+    background-color:  bisque; 
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.country-name {
+    font-weight: 600;
+}
+
+
+.flags{
+    width: 100%;
+    height: 200px;
+}
+
+.flag{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#search {
+    border-radius: 20px;
+    padding: .5rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.search-div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+#search:focus {
+    outline: none;
+}
+
+/*  */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.headerRight {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.headerRight-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Select Option */
+
+.region-container {
+    position: relative;
+    font-family: Arial;
+  }
+  
+  .select-selected {
+    background-color: DodgerBlue;
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
