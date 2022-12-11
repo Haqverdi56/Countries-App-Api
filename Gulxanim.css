@@ -41,6 +41,7 @@ body {
     object-fit: cover;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    cursor: pointer;
 }
 
 #search {
@@ -80,14 +81,14 @@ body {
 .region-container {
     position: relative;
     font-family: Arial;
-  }
+}
   
-  .select-selected {
+.select-selected {
     background-color: DodgerBlue;
-  }
+}
   
-  /* Style the arrow inside the select element: */
-  .select-selected:after {
+/* Style the arrow inside the select element: */
+.select-selected:after {
     position: absolute;
     content: "";
     top: 14px;
@@ -96,5 +97,37 @@ body {
     height: 0;
     border: 6px solid transparent;
     border-color: #fff transparent transparent transparent;
-  }
+}
+
   
+
+
+  /* DETAILS PAGE */
+
+#main {
+    display: flex;
+    gap: 8rem;
+    border: 1px solid black;
+}
+
+#detail-flag {
+    width: 70rem;
+    height: 25rem;
+}
+#detail-flag img {
+    width: 100%;
+    height: 100%;
+}
+
+#detail-info {
+    border: 1px solid gray;
+    width: 100%;
+}
+
+#sub-detail {
+    display: flex;
+    gap: 5rem;
+}
+#sub-detail span {
+    font-weight: 400;
+}
