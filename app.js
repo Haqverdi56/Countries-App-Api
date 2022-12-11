@@ -17,9 +17,9 @@ getData()
 function fillData(datas) {
     datas.forEach(data=>{
         container.innerHTML += `
-        <div name=${data.name.common} class="inner-container" onclick="func()">
+        <div name=${data.name.common} class="inner-container">
                 <div class="flags">
-                    <img class="flag" src="${data?.flags?.svg}" alt="">
+                    <a href="details.html" target="_blank"><img class="flag" src="${data?.flags?.svg}" alt=""></a>
                 </div>
                 <div class="sub-container">
                     <p class="texts" class="country-name">${data?.name?.common}</p>
@@ -29,11 +29,14 @@ function fillData(datas) {
                 </div>
         </div>`
     });
+
+    document.querySelectorAll('.inner-container').forEach(contain=>{
+        contain.addEventListener('click', function() {
+            localStorage.setItem("countryName", contain.getAttribute('name'))
+        })
+    }) 
 }
-function func(e) {
-    // localStorage.setItem("idd", num)
-    console.log(e)
-}
+
 
 searchInput.addEventListener("input", function searching() {
 
@@ -61,7 +64,8 @@ function createError() {
     container.appendChild(createErrorElement);
 }
 
-selectValue.addEventListener('change', function() {
+selectValue.addEventListener('change', function(e) {
+    console.log(e);
     container.innerHTML = " ";
     // console.log(selectValue.value)
     if(selectValue.value === 'all') {

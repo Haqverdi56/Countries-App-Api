@@ -1,10 +1,11 @@
 const main = document.getElementById('main')
 
-const url = "https://restcountries.com/v3.1/all";
+const url = "https://restcountries.com/v3.1/name/";
+const countryName = localStorage.getItem('countryName')
 
 function getData(){
-    axios.get(url)
-    .then( (res) => {
+    axios.get(`https://restcountries.com/v3.1/name/${countryName}`)
+    .then((res) => {
         fillData(res.data)
     });
 }
@@ -16,7 +17,7 @@ function fillData(datas) {
         main.innerHTML += `
         <div id="detail-flag"><img src="${data.flags.svg}" alt=""></div>
         <div id="detail-info">
-            <h1>Belgium</h1>
+            <h1>${data.name.common}</h1>
             <div id="sub-detail">
                 <div>
                     <h4>Native Name: <span>Belgie</span></h4>
@@ -36,5 +37,4 @@ function fillData(datas) {
             </div>
         </div>`
     });
-    
 }
