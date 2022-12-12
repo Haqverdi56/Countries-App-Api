@@ -15,11 +15,12 @@ function getData(){
 getData()
 
 function fillData(datas) {
-    datas.forEach(data=>{
+    datas.forEach((data, i)=>{
+        console.log(data)
         container.innerHTML += `
         <div name=${data.name.common} class="inner-container">
                 <div class="flags">
-                    <a href="details.html" target="_blank"><img class="flag" src="${data?.flags?.svg}" alt=""></a>
+                    <a href="details.html" onclick=moreDetails(${i}) target="_blank"><img class="flag" src="${data?.flags?.svg}" alt=""></a>
                 </div>
                 <div class="sub-container">
                     <p class="texts" class="country-name">${data?.name?.common}</p>
@@ -30,11 +31,11 @@ function fillData(datas) {
         </div>`
     });
 
-    document.querySelectorAll('.inner-container').forEach(contain=>{
-        contain.addEventListener('click', function() {
-            localStorage.setItem("countryName", contain.getAttribute('name'))
-        })
-    }) 
+    // document.querySelectorAll('.inner-container').forEach(contain=>{
+    //     contain.addEventListener('click', function() {
+    //         localStorage.setItem("countryName", contain.getAttribute('name'))
+    //     })
+    // }) 
 }
 
 
@@ -82,4 +83,12 @@ selectValue.addEventListener('change', function(e) {
 })
 
 
-
+function moreDetails(index) {
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data[index].name.common)
+            localStorage.setItem("countryName", data[index].name.common)
+            // window.location = "./details.html"
+        })
+}
